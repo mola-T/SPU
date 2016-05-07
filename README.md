@@ -5,7 +5,7 @@ SPU stands for Silent Package Upgrader.
 It does what it named.
 
 ## Introduction
-There are numerous package for upgrading packages. However, I have not met one that can suppress the freezing during `Contacting Host: elpa.gnus.org:8` and `Contacting Host: melpa.org:433`. The process takes about 5 to 10 seconds. I always believe from the view of the end user, the ui freezing for 1 second is long, 2 senconds is too long, longer than 3 seconds is unacceptable. So I write this package.
+There are numerous package for upgrading packages. However, I have not met one that can suppress the freezing during `Contacting Host: elpa.gnus.org:80` and `Contacting Host: melpa.org:433`. The process takes about 5 to 10 seconds. I always believe from the view of the end user, the ui freezing for 1 second is long, 2 senconds is too long, longer than 3 seconds is unacceptable. So I write this package.
 
 The second purpose of writing this package is to demonstrate the use of [timp](https://github.com/mola-T/timp).
 
