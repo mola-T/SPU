@@ -36,6 +36,8 @@
 ;;; code:
 (require 'signal)
 (require 'timp)
+(require 'subr-x)
+(require 'package)
 
 (defgroup spu nil
   "Group for Silenct Package Upgrader."
