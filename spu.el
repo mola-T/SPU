@@ -97,6 +97,9 @@
       (throw 'ran-already nil))
 
     (setq spu-upgrade-in-process t)
+
+    (when prefix
+      (message "[SPU] Checking package information."))
     
     (unless (timp-validate spu-thread)
       (setq spu-thread (timp-get :persist t)))
