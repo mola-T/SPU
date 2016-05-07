@@ -36,11 +36,13 @@ If you use `use-package`, you can do:
 
 ```
 
+<br
+
 There is a on demand interactive package command <kbd>M-x</kbd> `spu-package-upgrade` you may want to make a keybind.
 
 <br>
 
-If you are uncomfortable with the silent package upgrade (Although I think no one will inpesct the source code before they upgrade a package), you can add `(setq spu-require-confirm-upgrade-package t)`.
+If you are uncomfortable with the silent package upgrade (Although I think no one will inpesct the source code before they upgrade a package), you can add `(setq spu-require-confirm-upgrade-package t)` to your `init` file.
 
 <br>
 
