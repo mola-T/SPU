@@ -36,7 +36,7 @@ If you use `use-package`, you can do:
 
 ```
 
-<br
+<br>
 
 There is a on demand interactive package command <kbd>M-x</kbd> `spu-package-upgrade` you may want to make a keybind.
 
