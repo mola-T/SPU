@@ -4,7 +4,7 @@
 ;; Author: Mola-T <Mola@molamola.xyz>
 ;; URL: https://github.com/mola-T/spu
 ;; Version: 1.0
-;; Package-Requires: ((emacs "24.4) (cl-lib "0.5) (signal "1.0") (timp "1.1.0"))
+;; Package-Requires: ((emacs "24.4") (signal "1.0") (timp "1.1.0"))
 ;; Keywords: convenience, package
 ;;
 ;;; License:
@@ -36,6 +36,8 @@
 ;;; code:
 (require 'signal)
 (require 'timp)
+(require 'subr-x)
+(require 'package)
 
 (defgroup spu nil
   "Group for Silenct Package Upgrader."
