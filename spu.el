@@ -31,6 +31,9 @@
 ;; You will never being blocked by "Contacting host: elpa.gnu.org:80...."
 ;; when upgrading package.
 ;;
+;; You will never worry about packages ugrade
+;; with just one line : (spu-package-upgrade-daily) added to your init file,
+;;
 ;; See https://github.com/mola-T/spu for more information.
 ;;
 ;;; code:
@@ -133,10 +136,12 @@
     (if (and (= (length installed-list) 0) (= (length error-list) 0))
         (message "[SPU] All packages are up to date.")
       (signal-emit 'spu-package-upgrade-finished-signal)
-      (signal-emit 'spu-package-upgraded-list-signal :arg (list installed-list))
-      (signal-emit 'spu-package-upgraded-error-list-signal :arg (list error-list))
+      (when installed-list
+        (signal-emit 'spu-package-upgraded-list-signal :arg (list installed-list)))
+      (when error-list
+        (signal-emit 'spu-package-upgraded-error-list-signal :arg (list error-list)))
       (message "[SPU] %d package%s upgraded. %s\n      M-x %s for details."
-                    (length installed-list)
+               (length installed-list)
                     (if (> (length installed-list) 1) "s" "")
                     (if (> (length error-list) 0)
                         (propertize (format "%d error%s occurs."
