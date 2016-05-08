@@ -1,3 +1,5 @@
+[![MELPA](http://melpa.org/packages/spu-badge.svg)](http://melpa.org/#/spu)
+
 # SPU
 
 SPU stands for Silent Package Upgrader.
@@ -19,7 +21,7 @@ The second purpose of writing this package is to demonstrate the use of [timp](h
 * timp.el - https://github.com/mola-T/timp
 
 
-## Usuage
+## Usage
 
 Put this in your `init` file. This will upgrade packages daily.
 
