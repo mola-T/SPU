@@ -4,10 +4,10 @@
 
 SPU stands for Silent Package Upgrader.
 
-It does what it named.
+It does what its name says.
 
 ## Introduction
-There are numerous package for upgrading packages. However, I have not met one that can suppress the freezing during `Contacting Host: elpa.gnus.org:80` and `Contacting Host: melpa.org:433`. The process takes about 5 to 10 seconds. I always believe from the view of the end user, the ui freezing for 1 second is long, 2 senconds is too long, longer than 3 seconds is unacceptable. So I write this package.
+There are numerous packages for upgrading packages. However, I have not met one that can suppress the freezing during `Contacting Host: elpa.gnus.org:80` and `Contacting Host: melpa.org:433`. The process takes about 5 to 10 seconds. I always believe from the end user point of view, the UI freezing for 1 second is long, 2 seconds is too long, longer than 3 seconds is unacceptable. So I wrote this package.
 
 The second purpose of writing this package is to demonstrate the use of [timp](https://github.com/mola-T/timp).
 
@@ -40,11 +40,11 @@ If you use `use-package`, you can do:
 
 <br>
 
-There is a on demand interactive upgrade package command <kbd>M-x</kbd> `spu-package-upgrade` you may want to make a keybind.
+There is an on demand interactive upgrade package command <kbd>M-x</kbd> `spu-package-upgrade`. You may want to make a keybind.
 
 <br>
 
-If you are uncomfortable with the silent package upgrade (Although I think no one will inpesct the source code before they upgrade a package), you can add `(setq spu-require-confirm-upgrade-package t)` to your `init` file.
+If you are uncomfortable with the silent package upgrade (Although I think no one will inspect the source code before they upgrade a package), you can add `(setq spu-require-confirm-upgrade-package t)` to your `init` file.
 
 <br>
 
