@@ -153,14 +153,15 @@ packages marked for deletion are removed."
         (write-region report nil (concat spu-log-path (format-time-string "%Y%m%d") ".log") t))
     (cons installed-list error-list)))
 
-;; Ensure log path directory exists
-(make-directory spu-log-path t)
-;; Clean up log path directory if necessary
-(let ((files (directory-files spu-log-path t ".*\\.log")))
-  (when (>= (length files) spu-max-log-number)
-    (dotimes (_var (- (length files) (/ spu-max-log-number 2)))
-      (delete-file (car files))
-      (setq files (cdr files)))))
+(defun spu-dark-init ()
+ ;; Ensure log path directory exists
+ (make-directory spu-log-path t)
+ ;; Clean up log path directory if necessary
+ (let ((files (directory-files spu-log-path t ".*\\.log")))
+   (when (>= (length files) spu-max-log-number)
+     (dotimes (_var (- (length files) (/ spu-max-log-number 2)))
+       (delete-file (car files))
+       (setq files (cdr files))))))
 
 (provide 'spu-dark)
 ;;; spu-dark.el ends here

@@ -3,8 +3,8 @@
 ;; Copyright (C) 2016 Mola-T
 ;; Author: Mola-T <Mola@molamola.xyz>
 ;; URL: https://github.com/mola-T/spu
-;; Version: 1.0
-;; Package-Requires: ((emacs "24.4") (signal "1.0") (timp "1.1.0"))
+;; Version: 1.0.1
+;; Package-Requires: ((emacs "24.4") (signal "1.0") (timp "1.2.0"))
 ;; Keywords: convenience, package
 ;;
 ;;; License:
@@ -47,11 +47,12 @@
   :group 'convenience
   :group 'package)
 
-(defvar spu-log-path (file-name-as-directory
-                      (concat
-                       (file-name-as-directory (expand-file-name user-emacs-directory))
-                       "spu_log"))
-  "Path to save SPU packages upgrade log.")
+(defcustom spu-log-path (file-name-as-directory
+                         (concat
+                          (file-name-as-directory (expand-file-name user-emacs-directory))
+                          "spu_log"))
+  "Path to save SPU packages upgrade log."
+  :group 'spu)
 
 (defcustom spu-require-confirm-upgrade-package nil
   "Non-nil value will prompt for confirmation before upgrading packages."
@@ -109,7 +110,9 @@
     (unless (timp-validate spu-thread)
       (setq spu-thread (timp-get :persist t)))
     (timp-require-package spu-thread 'spu-dark)
+    (timp-send-variable spu-thread spu-log-path)
     (timp-send-exec spu-thread 'spu-dark-set-package-acrhives package-archives)
+    (timp-send-exec spu-thread 'spu-dark-init)
     (if spu-require-confirm-upgrade-package
         (timp-send-exec spu-thread 'spu-dark-get-package-upgrade-list
                         :reply-func #'spu-confirm-upgrade-package
